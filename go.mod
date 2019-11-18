@@ -1,1 +1,1 @@
-module github.com/fiorix/wsdl2go
+module github.com/kingzbauer/wsdl2go
