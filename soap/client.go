@@ -149,12 +149,7 @@ func doRoundTrip(c *Client, setHeaders func(*http.Request), in, out Message) err
 		}
 	}
 
-	marshalStructure := struct {
-		XMLName xml.Name `xml:"Envelope"`
-		Body    Message
-	}{Body: out}
-
-	return xml.NewDecoder(resp.Body).Decode(&marshalStructure)
+	return xml.NewDecoder(resp.Body).Decode(out)
 }
 
 // RoundTrip implements the RoundTripper interface.
